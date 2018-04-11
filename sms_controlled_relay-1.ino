@@ -2,9 +2,9 @@
 #include <softwareserial.h>
  
 #define TIMEOUT    5000
-int DEVICE1_PIN=5;
-int DEVICE2_PIN=6;
-char phone[]="0763965025";
+int DEVICE1_PIN=5; // To Trigger Relay 1
+int DEVICE2_PIN=6; // To Trigger Relay 2
+char phone[]="XXXXXXXXXX"; // Sim number to get status via SMS
 char boot[]="MOTOR CONTROLLER SYSTEM @ ROOM1, POWER ON SUCCESS";
 char on1[]="MOTOR 1 POWER ON SUCCESS";
 char on2[]="MOTOR 2 POWER ON SUCCESS";
@@ -120,7 +120,7 @@ void loop() {
             }
              
             nextLineIsMessage = false;
-            //Delete all messages
+            //Delete all messages to free up sim memory
 	    gprs.serialSIM800.println("AT+CMGD=1,4");
 	    delay(1000);
             gprs.serialSIM800.print("AT+CMGDA=\"");
@@ -143,7 +143,7 @@ void loop() {
   }
 }
 
-
+  // To Power on the GSM module (This is no need for some types of GSM modules)
   void powerUp()
   {
     pinMode(9, OUTPUT);
