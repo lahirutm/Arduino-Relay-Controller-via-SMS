@@ -7,3 +7,5 @@ Relay 1 can be Switch on by sending SMS with "POWERON1" and Switch off by sendin
 Relay 2 can be Switch on by sending SMS with "POWERON2" and Switch off by sending SMS with "POWEROFF2". 
 
 I have used Arduino nano with SIM900A GSM mdule with this setup and Solid State Relays to controll Electronic Appliance running with 230/250V electricity.
+
+(I actually use this to ON/OFF water motors in a remote location)
